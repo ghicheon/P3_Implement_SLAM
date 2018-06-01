@@ -91,7 +91,7 @@ class robot:
         ##    as list.append([index, dx, dy]), this format is important for data creation done later
         for index,(lx,ly)  in enumerate(self.landmarks):
             dx = lx - self.x  + self.rand() * self.measurement_noise
-            dy = ly - self.y
+            dy = ly - self.y  + self.rand() * self.measurement_noise
             #dist = np.sqrt( dx**2 + dy**2 )       #alternative... I think..
             if dx <= self.measurement_range  and dy <= self.measurement_range:
                 measurements.append([index,dx,dy])
